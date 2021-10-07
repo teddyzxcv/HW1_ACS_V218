@@ -15,17 +15,17 @@ programminglanguages* In(std::ifstream &ifst) {
         case 1:
             language = new programminglanguages;
             language->k = programminglanguages::PROCEDURAL;
-            In(language->s, ifst);
+            In(language->p, ifst);
             return language;
         case 2:
             language = new programminglanguages;
             language->k = programminglanguages::OBJECTORIENTED;
-            In(language->p, ifst);
+            In(language->o, ifst);
             return language;
         case 3:
             language = new programminglanguages;
             language->k = programminglanguages::FUNCTIONAL;
-            In(language->t, ifst);
+            In(language->f, ifst);
             return language;
         default:
             return 0;
@@ -33,7 +33,7 @@ programminglanguages* In(std::ifstream &ifst) {
 }
 
 //------------------------------------------------------------------------------
-// Случайный ввод обобщенной фигуры
+// Случайный ввод обобщенной языки
 programminglanguages *InRnd() {
     programminglanguages *language;
     auto k = rand() % 3 + 1;
@@ -41,17 +41,17 @@ programminglanguages *InRnd() {
         case 1:
             language = new programminglanguages;
             language->k = programminglanguages::PROCEDURAL;
-            InRnd(language->s);
+            InRnd(language->p);
             return language;
         case 2:
             language = new programminglanguages;
             language->k = programminglanguages::OBJECTORIENTED;
-            InRnd(language->p);
+            InRnd(language->o);
             return language;
         case 3:
             language = new programminglanguages;
             language->k = programminglanguages::FUNCTIONAL;
-            InRnd(language->t);
+            InRnd(language->f);
             return language;
         default:
             return 0;
@@ -59,17 +59,17 @@ programminglanguages *InRnd() {
 }
 
 //------------------------------------------------------------------------------
-// Вывод параметров текущей фигуры в поток
-void Out(programminglanguages &s, std::ofstream &ofst) {
-    switch(s.k) {
+// Вывод параметров текущей языки в поток
+void Out(programminglanguages &language, std::ofstream &ofst) {
+    switch(language.k) {
         case programminglanguages::PROCEDURAL:
-            Out(s.s, ofst);
+            Out(language.p, ofst);
             break;
         case programminglanguages::OBJECTORIENTED:
-            Out(s.p, ofst);
+            Out(language.o, ofst);
             break;
         case programminglanguages::FUNCTIONAL:
-            Out(s.t, ofst);
+            Out(language.f, ofst);
             break;
         default:
             ofst << "Incorrect language!" << std::endl;
@@ -78,14 +78,14 @@ void Out(programminglanguages &s, std::ofstream &ofst) {
 
 //------------------------------------------------------------------------------
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(programminglanguages &t) {
-    switch(t.k) {
+double YearsDivideLetters(programminglanguages &language) {
+    switch(language.k) {
         case programminglanguages::PROCEDURAL:
-            return YearsDivideLetters(t.s);
+            return YearsDivideLetters(language.p);
         case programminglanguages::OBJECTORIENTED:
-            return YearsDivideLetters(t.p);
+            return YearsDivideLetters(language.o);
         case programminglanguages::FUNCTIONAL:
-            return YearsDivideLetters(t.t);
+            return YearsDivideLetters(language.f);
         default:
             return 0.0;
     }

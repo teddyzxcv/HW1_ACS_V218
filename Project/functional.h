@@ -13,24 +13,25 @@
 // функцианальный язык
 struct functional {
     double tiobi;
-    int yearofсreation;
+    int yearofcreation;
     enum Types {
-        DYNAMIC,
-        STATIC
+        DYNAMIC = 1,
+        STATIC = 2
     };
+    Types type;
     bool isLazySupport;
 };
 
 // Ввод параметров функцианальный язык из файла
-void In(functional &s, std::ifstream &ifst);
+void In(functional &l, std::ifstream &ifst);
 
 // Случайный ввод параметров функцианальный язык
-void InRnd(functional &s);
+void InRnd(functional &l);
 
 // Вывод параметров функцианальный язык в форматируемый поток
-void Out(functional &s, std::ofstream &ofst);
+void Out(functional &l, std::ofstream &ofst);
 
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(functional &t);
+double YearsDivideLetters(functional &l);
 
 #endif //PROJECT_FUNCTIONAL_H

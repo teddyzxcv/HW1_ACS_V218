@@ -13,7 +13,7 @@
 // структура, обобщающая все имеющиеся виды языки программирование.
 struct programminglanguages {
     double tiobi;
-    int yearofсreation;
+    int yearofcreation;
     // значения ключей для каждой из языки
     enum key {
         FUNCTIONAL, OBJECTORIENTED, PROCEDURAL
@@ -21,9 +21,9 @@ struct programminglanguages {
     key k; // ключ
     // используемые альтернативы
     union { // используем простейшую реализацию
-        objectoriented s;
-        functional p;
-        procedural t;
+        objectoriented o;
+        functional f;
+        procedural p;
     };
 };
 
@@ -34,7 +34,7 @@ programminglanguages *In(std::ifstream &ifdt);
 programminglanguages *InRnd();
 
 // Вывод обобщенной язык
-void Out(programminglanguages &s, std::ofstream &ofst);
+void Out(programminglanguages &languages, std::ofstream &ofst);
 
 // Вычисление частное от деления года создания на количество символов в названии
 double YearsDivideLetters(programminglanguages &t);

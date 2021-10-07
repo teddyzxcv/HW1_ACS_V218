@@ -11,20 +11,20 @@
 // процедурный язык
 struct procedural {
     double tiobi;
-    int yearofсreation;
+    int yearofcreation;
     bool isAbstractTypeExist;
 };
 
 // Ввод параметров процедурный язык из файла
-void In(procedural &s, std::ifstream &ifst);
+void In(procedural &l, std::ifstream &ifst);
 
 // Случайный ввод параметров процедурный язык
-void InRnd(procedural &s);
+void InRnd(procedural &l);
 
 // Вывод параметров процедурный язык в форматируемый поток
-void Out(procedural &s, std::ofstream &ofst);
+void Out(procedural &l, std::ofstream &ofst);
 
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(procedural &t);
+double YearsDivideLetters(procedural &l);
 
 #endif //PROJECT_PROCEDURAL_H

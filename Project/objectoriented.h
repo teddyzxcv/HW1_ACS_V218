@@ -12,25 +12,26 @@
 // объектно-ориентированный язык
 struct objectoriented {
     double tiobi;
-    int yearofсreation;
-    enum Inheritance {
-        SINGLE,
+    int yearofcreation;
+    enum Inheritances {
+        SINGLE = 1,
         MULTIPLE,
         INTERFACE
     };
+    Inheritances inheritance;
 
 };
 
 // Ввод параметров объектно-ориентированный язык из файла
-void In(objectoriented &s, std::ifstream &ifst);
+void In(objectoriented &l, std::ifstream &ifst);
 
 // Случайный ввод параметров объектно-ориентированный язык
-void InRnd(objectoriented &s);
+void InRnd(objectoriented &l);
 
 // Вывод параметров объектно-ориентированный язык в форматируемый поток
-void Out(objectoriented &s, std::ofstream &ofst);
+void Out(objectoriented &l, std::ofstream &ofst);
 
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(objectoriented &t);
+double YearsDivideLetters(objectoriented &l);
 
 #endif //PROJECT_OBJECTORIENTED_H

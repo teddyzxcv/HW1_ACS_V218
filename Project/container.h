@@ -5,7 +5,9 @@
 
 // Инициализация
 struct container {
-    enum {max_len = 10000};
+    enum {
+        max_len = 10000
+    };
     int len;
     programminglanguages *cont[max_len];
 };
@@ -17,15 +19,15 @@ void Init(container &c);
 void Clear(container &c);
 
 // Ввод в контейнер
-void In(container &c, ifstream &ifst);
+void In(container &c, std::ifstream &ifst);
 
 // Ввод случайных элементов
 void InRnd(container &c, int size);
 
 // Вывод всего, что в контейнере
-void Out(container &c, ofstream &ofst);
+void Out(container &c, std::ofstream &ofst);
 
 // Сортировка контейнера по объёму фигур
-void SortShapes(container &c);
+void SortLanguages(container &c);
 
 #endif //PROJECT_CONTAINER_H

@@ -65,16 +65,6 @@ CMAKE_BINARY_DIR = /home/t/Documents/Github/HW1_ACS_V218/Project/cmake-build-deb
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/t/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -84,6 +74,16 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/t/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,24 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Project
+# Target rules for targets named task1
 
 # Build rule for target.
-Project: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Project
-.PHONY : Project
+task1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task1
+.PHONY : task1
 
 # fast build rule for target.
-Project/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
-.PHONY : Project/fast
+task1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/build
+.PHONY : task1/fast
+
+functional.o: functional.cpp.o
+.PHONY : functional.o
+
+# target to build an object file
+functional.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/functional.cpp.o
+.PHONY : functional.cpp.o
+
+functional.i: functional.cpp.i
+.PHONY : functional.i
+
+# target to preprocess a source file
+functional.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/functional.cpp.i
+.PHONY : functional.cpp.i
+
+functional.s: functional.cpp.s
+.PHONY : functional.s
+
+# target to generate assembly for a file
+functional.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/functional.cpp.s
+.PHONY : functional.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +166,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,15 +174,63 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+objectoriented.o: objectoriented.cpp.o
+.PHONY : objectoriented.o
+
+# target to build an object file
+objectoriented.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/objectoriented.cpp.o
+.PHONY : objectoriented.cpp.o
+
+objectoriented.i: objectoriented.cpp.i
+.PHONY : objectoriented.i
+
+# target to preprocess a source file
+objectoriented.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/objectoriented.cpp.i
+.PHONY : objectoriented.cpp.i
+
+objectoriented.s: objectoriented.cpp.s
+.PHONY : objectoriented.s
+
+# target to generate assembly for a file
+objectoriented.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/objectoriented.cpp.s
+.PHONY : objectoriented.cpp.s
+
+procedural.o: procedural.cpp.o
+.PHONY : procedural.o
+
+# target to build an object file
+procedural.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/procedural.cpp.o
+.PHONY : procedural.cpp.o
+
+procedural.i: procedural.cpp.i
+.PHONY : procedural.i
+
+# target to preprocess a source file
+procedural.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/procedural.cpp.i
+.PHONY : procedural.cpp.i
+
+procedural.s: procedural.cpp.s
+.PHONY : procedural.s
+
+# target to generate assembly for a file
+procedural.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/procedural.cpp.s
+.PHONY : procedural.cpp.s
 
 programminglanguages.o: programminglanguages.cpp.o
 .PHONY : programminglanguages.o
 
 # target to build an object file
 programminglanguages.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/programminglanguages.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/programminglanguages.cpp.o
 .PHONY : programminglanguages.cpp.o
 
 programminglanguages.i: programminglanguages.cpp.i
@@ -166,7 +238,7 @@ programminglanguages.i: programminglanguages.cpp.i
 
 # target to preprocess a source file
 programminglanguages.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/programminglanguages.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/programminglanguages.cpp.i
 .PHONY : programminglanguages.cpp.i
 
 programminglanguages.s: programminglanguages.cpp.s
@@ -174,7 +246,7 @@ programminglanguages.s: programminglanguages.cpp.s
 
 # target to generate assembly for a file
 programminglanguages.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/programminglanguages.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task1.dir/build.make CMakeFiles/task1.dir/programminglanguages.cpp.s
 .PHONY : programminglanguages.cpp.s
 
 # Help Target
@@ -185,10 +257,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Project"
+	@echo "... task1"
+	@echo "... functional.o"
+	@echo "... functional.i"
+	@echo "... functional.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... objectoriented.o"
+	@echo "... objectoriented.i"
+	@echo "... objectoriented.s"
+	@echo "... procedural.o"
+	@echo "... procedural.i"
+	@echo "... procedural.s"
 	@echo "... programminglanguages.o"
 	@echo "... programminglanguages.i"
 	@echo "... programminglanguages.s"
