@@ -21,12 +21,8 @@ int main(int argc, char *argv[]) {
 
     if (!strcmp(argv[1], "-f")) {
         std::ifstream ifst(test + "/" + argv[2]);
-        if (atoi(argv[2]) < 20) {
-            In(c, ifst);
-        } else {
-            error();
-            return 2;
-        }
+        In(c, ifst);
+
     } else if (!strcmp(argv[1], "-n")) {
         int size = atoi(argv[2]);
         if ((size < 1) || (size > 10000)) {
@@ -41,7 +37,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Вывод всех фигур
-    std::ofstream ofst1(argv[3]);
+    std::ofstream ofst1(res + "/" + argv[3]);
     ofst1 << "Languages:\n";
     Out(c, ofst1);
 

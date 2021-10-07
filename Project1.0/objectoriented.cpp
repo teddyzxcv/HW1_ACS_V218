@@ -18,7 +18,7 @@ void In(objectoriented &s, std::ifstream &ifst) {
 void InRnd(objectoriented &s) {
     s.tiobi = Random(100);
     s.yearofcreation = Random(2021);
-    s.inheritance = static_cast<objectoriented::Inheritance>(3);
+    s.inheritance = static_cast<objectoriented::Inheritance>(Random(3));
 }
 
 //------------------------------------------------------------------------------
@@ -27,8 +27,19 @@ void Out(objectoriented &s, std::ofstream &ofst) {
     ofst << "It is a object oriented language: TIOBI = " << s.tiobi
          << ". Year of creation = " << s.yearofcreation
          << ". Years divide count letters in the name = " << YearsDivideLetters(s)
-         << ". Inheritance = " << s.inheritance
-         << "\n";
+         << ". Inheritance = ";
+    switch (s.inheritance) {
+        case 1:
+            ofst << "Single";
+            break;
+        case 2:
+            ofst << "Multiple";
+            break;
+        case 3:
+            ofst << "Interface";
+            break;
+    }
+    ofst << ".\n";
 }
 
 //------------------------------------------------------------------------------

@@ -25,8 +25,14 @@ void Out(procedural &s, std::ofstream &ofst) {
     ofst << "It is a object oriented language: TIOBI = " << s.tiobi
          << ". Year of creation = " << s.yearofcreation
          << ". Years divide count letters in the name = " << YearsDivideLetters(s)
-         << ". Is abstract type exist = " << s.isAbstractTypeExist
-         << "\n";
+         << ". Is abstract type exist = ";
+    if (s.isAbstractTypeExist) {
+        ofst << "Yes." << "\n";
+    } else {
+        ofst << "No." << "\n";
+    }
+
+
 }
 
 //------------------------------------------------------------------------------

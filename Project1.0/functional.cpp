@@ -28,9 +28,22 @@ void Out(functional &s, std::ofstream &ofst) {
     ofst << "It is a functional language: TIOBI = " << s.tiobi
          << ". Year of creation = " << s.yearofcreation
          << ". Years divide count letters in the name = " << YearsDivideLetters(s)
-         << ". Type = " << s.type
-         << ". is lazy calculation support" << s.isLazySupport
-         << "\n";
+         << ". Type = ";
+    switch (s.type) {
+        case 1:
+            ofst << "Dynamic";
+            break;
+        case 2:
+            ofst << "Static";
+            break;
+    }
+    ofst << ". Is lazy calculation support = ";
+    if (s.isLazySupport) {
+        ofst << "Yes." << "\n";
+    } else {
+        ofst << "No." << "\n";
+    }
+
 }
 
 //------------------------------------------------------------------------------
