@@ -10,7 +10,9 @@
 // Ввод параметров функцианальный язык из потока
 void In(functional *s, FILE *f) {
     int type;
-    fscanf(f, "%d%d%i%i", s->tiobi, s->yearofcreation, type, s->isLazySupport);
+    int isLazy = 0;
+    fscanf(f, "%lf%d%i%i", &(s->tiobi), &(s->yearofcreation), &(type), &(isLazy));
+    s->isLazySupport = isLazy;
     s->type = static_cast<functional::Types>(type);
 }
 
@@ -34,13 +36,13 @@ void Out(functional *s, FILE *f) {
             strcpy(type, "Static");
             break;
     }
-    if (s->isLazySupport) {
-        strcpy(lazy, "Yes");
-    } else {
+    if (!s->isLazySupport) {
         strcpy(lazy, "No");
+    } else {
+        strcpy(lazy, "Yes");
     }
     fprintf(f, "It is a functional language: TIOBI = %f. "
-               "Year of creation = %f . Years divide count letters in the name = %f. Type = %s. Is lazy calculation support = %s\n",
+               "Year of creation = %d . Years divide count letters in the name = %f. Type = %s. Is lazy calculation support = %s\n",
             s->tiobi, s->yearofcreation,
             YearsDivideLetters(s), type, lazy);
 }

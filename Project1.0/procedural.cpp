@@ -7,7 +7,9 @@
 //------------------------------------------------------------------------------
 // Ввод параметров процедурный язык из потока
 void In(procedural *s, FILE *f) {
-    fscanf(f, "%d%d%d", s->tiobi, s->yearofcreation, s->isAbstractTypeExist);
+    int isAbstract = 0;
+    fscanf(f, "%lf%d%d", &(s->tiobi), &(s->yearofcreation), &isAbstract);
+    s->isAbstractTypeExist = isAbstract;
 }
 
 // Случайный ввод параметров процедурный язык
@@ -28,7 +30,7 @@ void Out(procedural *s, FILE *f) {
     }
 
     fprintf(f, "It is a procedural language: TIOBI = %f. "
-               "Year of creation = %f . Years divide count letters in the name = %f. Is abstract type exist = %s",
+               "Year of creation = %d . Years divide count letters in the name = %f. Is abstract type exist = %s",
             s->tiobi, s->yearofcreation,
             YearsDivideLetters(s), isAbstract);
 

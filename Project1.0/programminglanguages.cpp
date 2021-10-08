@@ -14,8 +14,8 @@ programminglanguages *In(int *size, FILE *f) {
     switch (k) {
         case 1:
             language = new programminglanguages;
-            language->k = programminglanguages::PROCEDURAL;
-            In(&(language->p), f);
+            language->k = programminglanguages::FUNCTIONAL;
+            In(&(language->f), f);
             return language;
         case 2:
             language = new programminglanguages;
@@ -24,8 +24,8 @@ programminglanguages *In(int *size, FILE *f) {
             return language;
         case 3:
             language = new programminglanguages;
-            language->k = programminglanguages::FUNCTIONAL;
-            In(&(language->f), f);
+            language->k = programminglanguages::PROCEDURAL;
+            In(&(language->p), f);
             return language;
         default:
             return 0;
@@ -40,8 +40,8 @@ programminglanguages *InRnd() {
     switch (k) {
         case 1:
             language = new programminglanguages;
-            language->k = programminglanguages::PROCEDURAL;
-            InRnd(&(language->p));
+            language->k = programminglanguages::FUNCTIONAL;
+            InRnd(&(language->f));
             return language;
         case 2:
             language = new programminglanguages;
@@ -50,8 +50,8 @@ programminglanguages *InRnd() {
             return language;
         case 3:
             language = new programminglanguages;
-            language->k = programminglanguages::FUNCTIONAL;
-            InRnd(&(language->f));
+            language->k = programminglanguages::PROCEDURAL;
+            InRnd(&(language->p));
             return language;
         default:
             return 0;
@@ -62,14 +62,14 @@ programminglanguages *InRnd() {
 // Вывод параметров текущей языки в поток
 void Out(programminglanguages *language, FILE *f) {
     switch (language->k) {
-        case programminglanguages::PROCEDURAL:
-            Out(&(language->p), f);
+        case programminglanguages::FUNCTIONAL:
+            Out(&(language->f), f);
             break;
         case programminglanguages::OBJECTORIENTED:
             Out(&(language->o), f);
             break;
-        case programminglanguages::FUNCTIONAL:
-            Out(&(language->f), f);
+        case programminglanguages::PROCEDURAL:
+            Out(&(language->p), f);
             break;
         default:
             fprintf(f, "Incorrect language!\n");
@@ -80,12 +80,12 @@ void Out(programminglanguages *language, FILE *f) {
 // Вычисление частное от деления года создания на количество символов в названии
 double YearsDivideLetters(programminglanguages *language) {
     switch (language->k) {
-        case programminglanguages::PROCEDURAL:
-            return YearsDivideLetters(&(language->p));
-        case programminglanguages::OBJECTORIENTED:
-            return YearsDivideLetters(&(language->o));
         case programminglanguages::FUNCTIONAL:
             return YearsDivideLetters(&(language->f));
+        case programminglanguages::OBJECTORIENTED:
+            return YearsDivideLetters(&(language->o));
+        case programminglanguages::PROCEDURAL:
+            return YearsDivideLetters(&(language->p));
         default:
             return 0.0;
     }

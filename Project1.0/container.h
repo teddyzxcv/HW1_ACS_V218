@@ -5,15 +5,12 @@
 
 // Инициализация
 struct container {
-    enum {
-        max_len = 10000
-    };
     int len;
-    programminglanguages *cont[max_len];
+    programminglanguages **cont;
 };
 
 // Инициализация контейнера
-void Init(container *c);
+void Init(container *c, int *size);
 
 // Полная очистка контейнера
 void Clear(container *c);

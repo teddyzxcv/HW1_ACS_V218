@@ -23,23 +23,22 @@ int main(int argc, char *argv[]) {
     strcat(resPath2, argv[4]);
 
     printf("Program started!\n");
-    container *c;
-    Init(c);
+    container *c = new container;
     FILE *f;
     int size;
 
     if (!strcmp(argv[1], "-f")) {
         f = fopen(testPath, "r");
         fscanf(f, "%d", &size);
-
+        Init(c, &size);
         In(c, &size, f);
-
     } else if (!strcmp(argv[1], "-n")) {
-        int size = atoi(argv[2]);
+        size = atoi(argv[2]);
         if ((size < 1) || (size > 10000)) {
             printf("Number of languages has to be between 1 and 10000");
             return 3;
         }
+        Init(c, &size);
         srand(static_cast<unsigned int>(time(0)));
         InRnd(c, &size);
     } else {

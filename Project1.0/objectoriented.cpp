@@ -8,7 +8,7 @@
 // Ввод параметров объектно-ориентированный язык из потока
 void In(objectoriented *s, FILE *f) {
     int inheritance;
-    fscanf(f, "%d%d%i", s->tiobi, s->yearofcreation, inheritance);
+    fscanf(f, "%lf%d%i", &(s->tiobi), &(s->yearofcreation), &(inheritance));
     s->inheritance = static_cast<objectoriented::Inheritance>(inheritance);
 }
 
@@ -35,7 +35,7 @@ void Out(objectoriented *s, FILE *f) {
             break;
     }
     fprintf(f, "It is a object oriented language: TIOBI = %f. "
-               "Year of creation = %f . Years divide count letters in the name = %f. Inheritance = %s\n",
+               "Year of creation = %d . Years divide count letters in the name = %f. Inheritance = %s\n",
             s->tiobi, s->yearofcreation,
             YearsDivideLetters(s), inher);
 }

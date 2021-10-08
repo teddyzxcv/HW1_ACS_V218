@@ -1,7 +1,8 @@
 #include "container.h"
 
 // Инициализация
-void Init(container *c) {
+void Init(container *c, int *size) {
+    c->cont = new programminglanguages *[*size];
     c->len = 0;
 }
 
@@ -15,7 +16,7 @@ void Clear(container *c) {
 
 // Ввод в контейнер
 void In(container *c, int *size, FILE *f) {
-    for (int i = 0; i < *size; ++i) {
+    while (c->len < *size) {
         if ((c->cont[c->len] = In(size, f)) != 0) {
             c->len++;
         }
@@ -24,7 +25,7 @@ void In(container *c, int *size, FILE *f) {
 
 // Ввод случайных элементов
 void InRnd(container *c, int *size) {
-    while (c->len <= *size) {
+    while (c->len < *size) {
         if ((c->cont[c->len] = InRnd()) != nullptr) {
             c->len++;
         }
