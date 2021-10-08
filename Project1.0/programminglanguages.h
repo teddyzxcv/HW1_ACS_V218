@@ -28,15 +28,15 @@ struct programminglanguages {
 };
 
 // Ввод обобщенной язык
-programminglanguages *In(std::ifstream &ifdt);
+programminglanguages *In(int *size, FILE *f);
 
 // Случайный ввод обобщенной язык
 programminglanguages *InRnd();
 
 // Вывод обобщенной язык
-void Out(programminglanguages &languages, std::ofstream &ofst);
+void Out(programminglanguages *languages, FILE *f);
 
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(programminglanguages &t);
+double YearsDivideLetters(programminglanguages *t);
 
 #endif //PROJECT_PROGRAMMINGLANGUAGES_H

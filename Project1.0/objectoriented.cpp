@@ -4,46 +4,44 @@
 
 #include "objectoriented.h"
 
-#include <math.h>
-
 //------------------------------------------------------------------------------
 // Ввод параметров объектно-ориентированный язык из потока
-void In(objectoriented &s, std::ifstream &ifst) {
+void In(objectoriented *s, FILE *f) {
     int inheritance;
-    ifst >> s.tiobi >> s.yearofcreation >> inheritance;
-    s.inheritance = static_cast<objectoriented::Inheritance>(inheritance);
+    fscanf(f, "%d%d%i", s->tiobi, s->yearofcreation, inheritance);
+    s->inheritance = static_cast<objectoriented::Inheritance>(inheritance);
 }
 
 // Случайный ввод параметров объектно-ориентированный язык
-void InRnd(objectoriented &s) {
-    s.tiobi = Random(100);
-    s.yearofcreation = Random(2021);
-    s.inheritance = static_cast<objectoriented::Inheritance>(Random(3));
+void InRnd(objectoriented *s) {
+    s->tiobi = Random(100);
+    s->yearofcreation = Random(2021);
+    s->inheritance = static_cast<objectoriented::Inheritance>(Random(3));
 }
 
 //------------------------------------------------------------------------------
 // Вывод параметров объектно-ориентированный язык в поток
-void Out(objectoriented &s, std::ofstream &ofst) {
-    ofst << "It is a object oriented language: TIOBI = " << s.tiobi
-         << ". Year of creation = " << s.yearofcreation
-         << ". Years divide count letters in the name = " << YearsDivideLetters(s)
-         << ". Inheritance = ";
-    switch (s.inheritance) {
+void Out(objectoriented *s, FILE *f) {
+    char inher[100] = "";
+    switch (s->inheritance) {
         case 1:
-            ofst << "Single";
+            strcpy(inher, "Single");
             break;
         case 2:
-            ofst << "Multiple";
+            strcpy(inher, "Multiple");
             break;
         case 3:
-            ofst << "Interface";
+            strcpy(inher, "Interface");
             break;
     }
-    ofst << ".\n";
+    fprintf(f, "It is a object oriented language: TIOBI = %f. "
+               "Year of creation = %f . Years divide count letters in the name = %f. Inheritance = %s\n",
+            s->tiobi, s->yearofcreation,
+            YearsDivideLetters(s), inher);
 }
 
 //------------------------------------------------------------------------------
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(objectoriented &s) {
-    return double(double(s.yearofcreation) / 14);
+double YearsDivideLetters(objectoriented *s) {
+    return double(double(s->yearofcreation) / 14);
 }

@@ -5,8 +5,11 @@
 // functional.h - содержит описание функцианальный язык
 //------------------------------------------------------------------------------
 
-#include <fstream>
 #include "rnd.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+#include "string.h"
 
 
 //------------------------------------------------------------------------------
@@ -24,15 +27,15 @@ struct functional {
 };
 
 // Ввод параметров функцианальный язык из файла
-void In(functional &l, std::ifstream &ifst);
+void In(functional *l, FILE *f);
 
 // Случайный ввод параметров функцианальный язык
-void InRnd(functional &l);
+void InRnd(functional *l);
 
 // Вывод параметров функцианальный язык в форматируемый поток
-void Out(functional &l, std::ofstream &ofst);
+void Out(functional *l, FILE *f);
 
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(functional &l);
+double YearsDivideLetters(functional *l);
 
 #endif //PROJECT_FUNCTIONAL_H

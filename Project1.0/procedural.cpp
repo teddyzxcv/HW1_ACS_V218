@@ -4,39 +4,38 @@
 
 #include "procedural.h"
 
-#include <math.h>
-
 //------------------------------------------------------------------------------
 // Ввод параметров процедурный язык из потока
-void In(procedural &s, std::ifstream &ifst) {
-    ifst >> s.tiobi >> s.yearofcreation >> s.isAbstractTypeExist;
+void In(procedural *s, FILE *f) {
+    fscanf(f, "%d%d%d", s->tiobi, s->yearofcreation, s->isAbstractTypeExist);
 }
 
 // Случайный ввод параметров процедурный язык
-void InRnd(procedural &s) {
-    s.tiobi = Random(100);
-    s.yearofcreation = Random(2021);
-    s.isAbstractTypeExist = Random(2) - 1;
+void InRnd(procedural *s) {
+    s->tiobi = Random(100);
+    s->yearofcreation = Random(2021);
+    s->isAbstractTypeExist = Random(2) - 1;
 }
 
 //------------------------------------------------------------------------------
 // Вывод параметров процедурный язык в поток
-void Out(procedural &s, std::ofstream &ofst) {
-    ofst << "It is a object oriented language: TIOBI = " << s.tiobi
-         << ". Year of creation = " << s.yearofcreation
-         << ". Years divide count letters in the name = " << YearsDivideLetters(s)
-         << ". Is abstract type exist = ";
-    if (s.isAbstractTypeExist) {
-        ofst << "Yes." << "\n";
+void Out(procedural *s, FILE *f) {
+    char isAbstract[100] = "";
+    if (s->isAbstractTypeExist) {
+        strcpy(isAbstract, "Yes.\n");
     } else {
-        ofst << "No." << "\n";
+        strcpy(isAbstract, "No.\n");
     }
 
+    fprintf(f, "It is a procedural language: TIOBI = %f. "
+               "Year of creation = %f . Years divide count letters in the name = %f. Is abstract type exist = %s",
+            s->tiobi, s->yearofcreation,
+            YearsDivideLetters(s), isAbstract);
 
 }
 
 //------------------------------------------------------------------------------
 // Вычисление частное от деления года создания на количество символов в названии
-double YearsDivideLetters(procedural &s) {
-    return double(double(s.yearofcreation) / 14);
+double YearsDivideLetters(procedural *s) {
+    return double(double(s->yearofcreation) / 14);
 }
