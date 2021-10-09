@@ -1,0 +1,24 @@
+Sorted container:
+Container contains 22 elements.
+0: It is a functional language: TIOBI = 75.000000. Year of creation = 1964 . Years divide count letters in the name = 196.400000. Type = Static. Is lazy calculation support = Yes
+1: It is a functional language: TIOBI = 37.000000. Year of creation = 1906 . Years divide count letters in the name = 190.600000. Type = Static. Is lazy calculation support = Yes
+2: It is a functional language: TIOBI = 93.000000. Year of creation = 1781 . Years divide count letters in the name = 178.100000. Type = Dynamic. Is lazy calculation support = Yes
+3: It is a object oriented language: TIOBI = 53.000000. Year of creation = 1770 . Years divide count letters in the name = 126.428571. Inheritance = Interface
+4: It is a object oriented language: TIOBI = 41.000000. Year of creation = 1578 . Years divide count letters in the name = 112.714286. Inheritance = Single
+5: It is a functional language: TIOBI = 65.000000. Year of creation = 1125 . Years divide count letters in the name = 112.500000. Type = Dynamic. Is lazy calculation support = No
+6: It is a procedural language: TIOBI = 38.000000. Year of creation = 1559 . Years divide count letters in the name = 111.357143. Is abstract type exist = Yes.
+7: It is a object oriented language: TIOBI = 73.000000. Year of creation = 1302 . Years divide count letters in the name = 93.000000. Inheritance = Multiple
+8: It is a procedural language: TIOBI = 2.000000. Year of creation = 1229 . Years divide count letters in the name = 87.785714. Is abstract type exist = No.
+9: It is a object oriented language: TIOBI = 59.000000. Year of creation = 1174 . Years divide count letters in the name = 83.857143. Inheritance = Multiple
+10: It is a procedural language: TIOBI = 31.000000. Year of creation = 1136 . Years divide count letters in the name = 81.142857. Is abstract type exist = Yes.
+11: It is a object oriented language: TIOBI = 45.000000. Year of creation = 1033 . Years divide count letters in the name = 73.785714. Inheritance = Multiple
+12: It is a functional language: TIOBI = 66.000000. Year of creation = 664 . Years divide count letters in the name = 66.400000. Type = Static. Is lazy calculation support = Yes
+13: It is a functional language: TIOBI = 39.000000. Year of creation = 633 . Years divide count letters in the name = 63.300000. Type = Static. Is lazy calculation support = Yes
+14: It is a functional language: TIOBI = 45.000000. Year of creation = 626 . Years divide count letters in the name = 62.600000. Type = Dynamic. Is lazy calculation support = Yes
+15: It is a functional language: TIOBI = 67.000000. Year of creation = 624 . Years divide count letters in the name = 62.400000. Type = Dynamic. Is lazy calculation support = No
+16: It is a functional language: TIOBI = 25.000000. Year of creation = 593 . Years divide count letters in the name = 59.300000. Type = Static. Is lazy calculation support = No
+17: It is a object oriented language: TIOBI = 18.000000. Year of creation = 710 . Years divide count letters in the name = 50.714286. Inheritance = Multiple
+18: It is a procedural language: TIOBI = 3.000000. Year of creation = 610 . Years divide count letters in the name = 43.571429. Is abstract type exist = No.
+19: It is a object oriented language: TIOBI = 67.000000. Year of creation = 563 . Years divide count letters in the name = 40.214286. Inheritance = Multiple
+20: It is a procedural language: TIOBI = 61.000000. Year of creation = 333 . Years divide count letters in the name = 23.785714. Is abstract type exist = No.
+21: It is a functional language: TIOBI = 69.000000. Year of creation = 13 . Years divide count letters in the name = 1.300000. Type = Static. Is lazy calculation support = Yes

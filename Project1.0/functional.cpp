@@ -4,8 +4,6 @@
 
 #include "functional.h"
 
-#include <math.h>
-
 //------------------------------------------------------------------------------
 // Ввод параметров функцианальный язык из потока
 void In(functional *s, FILE *f) {
@@ -16,6 +14,7 @@ void In(functional *s, FILE *f) {
     s->type = static_cast<functional::Types>(type);
 }
 
+//------------------------------------------------------------------------------
 // Случайный ввод параметров функцианальный язык
 void InRnd(functional *s) {
     s->tiobi = Random(100);

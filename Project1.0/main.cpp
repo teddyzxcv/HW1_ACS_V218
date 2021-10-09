@@ -53,10 +53,10 @@ int main(int argc, char *argv[]) {
     fclose(f);
 
     // Вывод отсортированных языки
-    //std::ofstream ofst2(argv[4]);
-    //ofst2 << "Languages sorted by volume:\n";
-    //SortShapes(c);
-    // Out(c, ofst2);
+    f = fopen(resPath2, "w+");
+    fprintf(f, "Sorted container:\n");
+    BinaryInsertion(c);
+    Out(c, f);
 
     Clear(c);
     printf("Stop\n");
