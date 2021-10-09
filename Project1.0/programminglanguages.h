@@ -12,8 +12,6 @@
 //------------------------------------------------------------------------------
 // структура, обобщающая все имеющиеся виды языки программирование.
 struct programminglanguages {
-    double tiobi;
-    int yearofcreation;
     // значения ключей для каждой из языки
     enum key {
         FUNCTIONAL, OBJECTORIENTED, PROCEDURAL

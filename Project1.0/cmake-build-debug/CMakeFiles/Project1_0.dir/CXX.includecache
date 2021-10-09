@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/container.cpp
-container.h
-/mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/container.h
-
 /mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/container.h
 programminglanguages.h
 /mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/programminglanguages.h
@@ -25,6 +21,10 @@ time.h
 /mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/time.h
 string.h
 /mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/string.h
+
+/mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/main.cpp
+container.h
+/mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/container.h
 
 /mnt/c/Users/teddyzxcv/Documents/GitHub/HW1_ACS_V218/Project1.0/objectoriented.h
 rnd.h
